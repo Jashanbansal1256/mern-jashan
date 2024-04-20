@@ -52,7 +52,7 @@ export const signin = async (req, res, next) => {
     const { password: hashPassword, ...rest } = validUser._doc;
 
     res
-      .cookie("token", token, { httpOnly: true, expires: expiry_Date })
+      .cookie("access_token", token, { httpOnly: true, expires: expiry_Date })
       .status(200)
       .json(rest);
   } catch (e) {
